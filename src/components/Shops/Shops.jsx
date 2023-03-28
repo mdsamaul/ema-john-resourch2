@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import OrderCart from '../OrderCart/OrderCart';
 import Products from '../Products/Products';
 import './Shops.css';
 const Shops = () => {
     const [products, setProduces] = useState([]);
-    const [orderCart, setOrderCart] = useState([])
+    const [orderCart, setOrderCart] = useState([]);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -34,6 +34,11 @@ const Shops = () => {
 
     }, [products]);
 
+    const handlerRemoveCart = () => {
+        const newCart = [];
+        setOrderCart(newCart);
+        deleteShoppingCart();
+    }
     const handlerAddToCart = (product) => {
         let newCart = [];
         const exists = orderCart.find(pd => pd.id === product.id);
@@ -59,13 +64,17 @@ const Shops = () => {
                         products={product}
                         key={product.id}
                         handlerAddToCart={handlerAddToCart}
+
                     ></Products>)
                 }
             </div>
             <div className='order-summary'>
                 <h4>Order Summary</h4>
                 {
-                    <OrderCart orderCart={orderCart}></OrderCart>
+                    <OrderCart
+                        orderCart={orderCart}
+                        handlerRemoveCart={handlerRemoveCart}
+                    ></OrderCart>
                 }
             </div>
         </div>

@@ -11,12 +11,33 @@
   font-size: 17px;
   margin-left: 0;
 }
+
 .grand-total {
-  font-weight: 400;
+  text-align: center;
+  font-weight: 700;
   font-size: 21px;
   color: #0e161a;
   margin: 0;
+  padding: 0;
 }
 .cart-details hr {
   margin: 0 25px 0 0;
+}
+.clear-review-btn-container {
+  width: 100%;
+  margin: 30px 25px 0 25px;
+}
+.clear-review-btn {
+  width: 85%;
+  border-radius: 4px;
+  color: white;
+  font-weight: 400;
+  font-size: 17px;
+}
+.clear-btn {
+  background: #ff3030;
+  margin: 0 0 20px 0;
+}
+.review-btn {
+  background: #ff9900;
 }
