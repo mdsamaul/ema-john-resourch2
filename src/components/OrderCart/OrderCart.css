@@ -1,0 +1,22 @@
+.cart-details h5 {
+  font-weight: 400;
+  font-size: 17px;
+  color: #2a414f;
+}
+.cart-details {
+  padding: 0 0 0 30px;
+}
+.cart-details p {
+  font-weight: 400;
+  font-size: 17px;
+  margin-left: 0;
+}
+.grand-total {
+  font-weight: 400;
+  font-size: 21px;
+  color: #0e161a;
+  margin: 0;
+}
+.cart-details hr {
+  margin: 0 25px 0 0;
+}
